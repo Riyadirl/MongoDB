@@ -1,3 +1,93 @@
 use('CraftShop')
 
-db.Employees.find()
+//db.isMaster()
+//db.getReplicationInfo()
+//db.listCommands()
+//db.logout()
+//db.printCollectionStats()
+//db.serverBuildInfo()
+
+
+//db.serverBuildInfo()
+//db.serverStatus()
+//db.shutdownServer()
+//db.stats()
+//db.version()
+
+
+//db.createCollection('Demo zxy')
+//db.Demo zxy.drop()
+
+
+
+//insert one
+//db.Brands.insertOne({"name": "oppo"})
+
+//insert many
+/*
+db.Brands.insertMany(
+    [
+            {"name": "huwae"},
+            {"name": "LG"},
+            {"name": "Dell"},
+            {"name": "Asus"},
+            {"name": "hp"},
+            {"name": "walton"},
+            {"name": "symphony"},
+            {"name": "maximus"},
+    ]
+)
+*/
+
+
+//find one
+/*
+db.Brands.findOne(
+    {"name": "hp"}
+)
+*/
+
+//projction
+/*
+db.Employees.find(
+    {},
+    {"_id":0,"salary":1, "name": 1}
+)
+
+
+
+// Comparison Query Operator
+
+db.Employees.find(
+    {
+        //salary:{$eq:35000}
+        //salary:{$gt:35000}
+        //salary:{$gte:35000}
+        //salary:{$lt:35000}
+        //salary:{$lte:35000}
+        //salary:{$in:[35000,50000]}
+        //salary:{$nin:[35000,50000]}
+    }
+)
+
+
+
+
+
+//Element Query
+//exists
+db.Brands.find(
+    {
+        city: {$exists : true}
+        country: {$exists : false}
+    }
+)
+*/
+
+
+
+//type 
+
+
+
+

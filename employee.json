@@ -1,0 +1,40 @@
+[
+{ 
+    "name" : "Rabbil", 
+    "designation" : "Asst Engineer", 
+    "salary" : 35000.0, 
+    "city" : "Dhaka"
+},
+{ 
+    "name" : "Rain", 
+    "designation" : "Sub Asst Engineer", 
+    "salary" : 30000.0, 
+    "city" : "Rangpur"
+},
+{ 
+    "name" : "Rakib", 
+    "designation" : "Engineer", 
+    "salary" : 40000.0, 
+    "city" : "Rangpur"
+},
+{ 
+    "name" : "Jamil", 
+    "designation" : "Engineer", 
+    "salary" : 40000.0, 
+    "city" : "Khulna"
+},
+{ 
+    "name" : "Kamal", 
+    "designation" : "Engineer", 
+    "salary" : 60000.0, 
+    "city" : "Sylet"
+},
+{ 
+    
+    "name" : "Akmal", 
+    "designation" : "Sr Engineer", 
+    "salary" : 70000.0, 
+    "city" : "Dhaka"
+}
+
+]
