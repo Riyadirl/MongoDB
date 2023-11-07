@@ -1,6 +1,12 @@
+//view all data
 
-//insert one
-db.employee.insert(
+db.employee.find({}) 
+//or
+db.employee.aggregate([])
+
+
+//insertOne
+db.getCollection("employee").insertOne(
 {
    " name" : "riyad",
    " id" : 123,
@@ -33,7 +39,152 @@ db.getCollection("employee").insertMany(
 //find
 db.employee.find({}).count('total')// count total number of data
 
-//aggregate
-db.employee.aggregate([
-    
+//aggregate (count)
+db.employee.aggregate(
+[
+  {$count : 'total'}
+])
+
+//aggregate sorting
+db.employee.aggregate(
+[
+  {$sort:{salary:1}}//assending
+  {$sort:{salary:-1}}// desending
+])
+
+//aggregate limit
+db.employee.aggregate(
+[
+{$limit:2}
+])
+
+
+//aggregate limit 1st and last
+
+db.employee.aggregate(
+[// top 5 salary
+{$sort:{salary:-1}},
+{$limit:5} 
+
+// last 5 salary
+{$sort:{salary:1}},
+{$limit:5}
+])
+
+
+//select by match / condition 
+db.employee.aggregate(
+[
+{$match:{salary:{$gt:10000}}},  //gater than 10000
+{$match:{salary:{$gte:10000}}}, //gater than or equal 10000
+{$match:{salary:{$lt:10000}}},  //less than 10000
+{$match:{salary:{$lte:10000}}}, //less than or equal 10000
+{$match:{salary:{$ne:10000}}}  //not equal 10000
+])
+
+//select by match / condition with and or
+db.employee.aggregate(
+[
+    //gater than 10000 and less than 20000
+{$match:{$and:[
+  {salary:{$gt:10000}},
+  {salary:{$lt:20000}}]
+  }},
+
+{$match:{$or:[{salary:{$gt:10000}},{salary:{$lt:20000}}]}}  //gater than 10000 or less than 20000
+]) 
+
+
+
+// like matching
+db.employee.aggregate(
+[
+{$match:{name:/^R/}} //start with R
+{$match:{name:/Riyad/}} //contain Riyad
+{$match:{name:/R$/}} //end with R
+{$match:{name:/^Riyad$/}} //exact match Riyad
+{$match:{name:/^Riyad$/i}} //Case-Insensitive Matching
+{$match:{$text:{$search:"Riyad"}}} //Full-Text Search
+])
+
+
+//match in
+db.employee.aggregate(
+[
+{$match:{name:{$in:["Riyad","Alice","Bob"]}}}
+])
+
+//projection
+db.employee.aggregate(
+[
+  {$project:{name:1,salary:1, _id:0}}// 1 means true
+]
+)
+
+//skip and limit
+db.employee.aggregate(
+[
+  {$skip:0},//no skip no limit
+
+  {$skip:3}, //skip first 2 data
+  {$limit:2} //next 2 data after skip 3 
+]
+)
+
+//group by
+db.employee.aggregate(
+[
+  {$group:{_id:"$designation"}}   // group by unique
+]
+)
+
+//group by sum
+db.employee.aggregate(
+[
+  {$group:{_id:"$designation", total:{$sum:"$salary"}}} // group by unique and sum
+]
+)
+
+//group by avg
+db.employee.aggregate(
+[
+  {$group:{_id:"$designation", avg:{$avg:"$salary"}}} // group by unique and avg
+])
+
+//Group By Max Min
+db.employee.aggregate(
+[
+  {$group:{_id:"$designation", max:{$max:"$salary"}, min:{$min:"$salary"}}} 
+])
+
+//without group by sum avg max min
+db.employee.aggregate(
+[
+  {$group:{_id:0, max:{$max:"$salary"}, min:{$min:"$salary"}}} //max min
+  {$group:{_id:0, avg:{$avg:"$salary"}}} //avg
+  {$group:{_id:0, total:{$sum:"$salary"}}} //sum
+])
+
+//group by multiple
+db.employee.aggregate(
+[
+  {$group:
+  {_id:{designation:"$designation", city:"$city"}, 
+  total:{$sum:"$salary"}, //sum
+  avg:{$avg:"$salary"}, //avg
+  max:{$max:"$salary"},//max
+  min:{$min:"$salary"}//min
+  }
+  }
+])
+
+
+//JOIN
+
+
+//join by lookup operator
+
+bd.brands.aggregate(
+[
+  
 ])
