@@ -1,0 +1,290 @@
+{
+  "help": "Database Class",
+  "docs": null,
+  "attr": [
+    {
+      "name": "getMongo",
+      "description": "Returns the current database connection"
+    },
+    {
+      "name": "getName",
+      "description": "Returns the name of the DB"
+    },
+    {
+      "name": "getCollectionNames",
+      "description": "Returns an array containing the names of all collections in the current database."
+    },
+    {
+      "name": "getCollectionInfos",
+      "description": "Returns an array of documents with collection information, i.e. collection name and options, for the current database."
+    },
+    {
+      "name": "runCommand",
+      "description": "Runs an arbitrary command on the database."
+    },
+    {
+      "name": "adminCommand",
+      "description": "Runs an arbitrary command against the admin database."
+    },
+    {
+      "name": "aggregate",
+      "description": "Runs a specified admin/diagnostic pipeline which does not require an underlying collection."
+    },
+    {
+      "name": "getSiblingDB",
+      "description": "Returns another database without modifying the db variable in the shell environment."
+    },
+    {
+      "name": "getCollection",
+      "description": "Returns a collection or a view object that is functionally equivalent to using the db.<collectionName>."
+    },
+    {
+      "name": "dropDatabase",
+      "description": "Removes the current database, deleting the associated data files."
+    },
+    {
+      "name": "createUser",
+      "description": "Creates a new user for the database on which the method is run. db.createUser() returns a duplicate user error if the user already exists on the database."
+    },
+    {
+      "name": "updateUser",
+      "description": "Updates the user’s profile on the database on which you run the method. An update to a field completely replaces the previous field’s values. This includes updates to the user’s roles array."
+    },
+    {
+      "name": "changeUserPassword",
+      "description": "Updates a user’s password. Run the method in the database where the user is defined, i.e. the database you created the user."
+    },
+    {
+      "name": "logout",
+      "description": "Ends the current authentication session. This function has no effect if the current session is not authenticated."
+    },
+    {
+      "name": "dropUser",
+      "description": "Removes the user from the current database."
+    },
+    {
+      "name": "dropAllUsers",
+      "description": "Removes all users from the current database."
+    },
+    {
+      "name": "auth",
+      "description": "Allows a user to authenticate to the database from within the shell."
+    },
+    {
+      "name": "grantRolesToUser",
+      "description": "Grants additional roles to a user."
+    },
+    {
+      "name": "revokeRolesFromUser",
+      "description": "Removes a one or more roles from a user on the current database."
+    },
+    {
+      "name": "getUser",
+      "description": "Returns user information for a specified user. Run this method on the user’s database. The user must exist on the database on which the method runs."
+    },
+    {
+      "name": "getUsers",
+      "description": "Returns information for all the users in the database."
+    },
+    {
+      "name": "createCollection",
+      "description": "Create new collection"
+    },
+    {
+      "name": "createView",
+      "description": "Create new view"
+    },
+    {
+      "name": "createRole",
+      "description": "Creates a new role."
+    },
+    {
+      "name": "updateRole",
+      "description": "Updates the role’s profile on the database on which you run the method. An update to a field completely replaces the previous field’s values."
+    },
+    {
+      "name": "dropRole",
+      "description": "Removes the role from the current database."
+    },
+    {
+      "name": "dropAllRoles",
+      "description": "Removes all roles from the current database."
+    },
+    {
+      "name": "grantRolesToRole",
+      "description": "Grants additional roles to a role."
+    },
+    {
+      "name": "revokeRolesFromRole",
+      "description": "Removes a one or more roles from a role on the current database."
+    },
+    {
+      "name": "grantPrivilegesToRole",
+      "description": "Grants additional privileges to a role."
+    },
+    {
+      "name": "revokePrivilegesFromRole",
+      "description": "Removes a one or more privileges from a role on the current database."
+    },
+    {
+      "name": "getRole",
+      "description": "Returns role information for a specified role. Run this method on the role’s database. The role must exist on the database on which the method runs."
+    },
+    {
+      "name": "getRoles",
+      "description": "Returns information for all the roles in the database."
+    },
+    {
+      "name": "currentOp",
+      "description": "Calls the currentOp command. Returns a document that contains information on in-progress operations for the database instance. The db.currentOp() method wraps the database command currentOp."
+    },
+    {
+      "name": "killOp",
+      "description": "Calls the killOp command. Terminates an operation as specified by the operation ID. To find operations and their corresponding IDs, see $currentOp or db.currentOp()."
+    },
+    {
+      "name": "shutdownServer",
+      "description": "Calls the shutdown command. Shuts down the current mongod or mongos process cleanly and safely. You must issue the db.shutdownServer() operation against the admin database."
+    },
+    {
+      "name": "fsyncLock",
+      "description": "Calls the fsync command. Forces the mongod to flush all pending write operations to disk and locks the entire mongod instance to prevent additional writes until the user releases the lock with a corresponding db.fsyncUnlock() command."
+    },
+    {
+      "name": "fsyncUnlock",
+      "description": "Calls the fsyncUnlock command. Reduces the lock taken by db.fsyncLock() on a mongod instance by 1."
+    },
+    {
+      "name": "version",
+      "description": "returns the db version. uses the buildinfo command"
+    },
+    {
+      "name": "serverBits",
+      "description": "returns the db serverBits. uses the buildInfo command"
+    },
+    {
+      "name": "isMaster",
+      "description": "Calls the isMaster command"
+    },
+    {
+      "name": "hello",
+      "description": "Calls the hello command"
+    },
+    {
+      "name": "serverBuildInfo",
+      "description": "returns the db serverBuildInfo. uses the buildInfo command"
+    },
+    {
+      "name": "serverStatus",
+      "description": "returns the server stats. uses the serverStatus command"
+    },
+    {
+      "name": "stats",
+      "description": "returns the db stats. uses the dbStats command"
+    },
+    {
+      "name": "hostInfo",
+      "description": "Calls the hostInfo command"
+    },
+    {
+      "name": "serverCmdLineOpts",
+      "description": "returns the db serverCmdLineOpts. uses the getCmdLineOpts command"
+    },
+    {
+      "name": "rotateCertificates",
+      "description": "Calls the rotateCertificates command"
+    },
+    {
+      "name": "printCollectionStats",
+      "description": "Prints the collection.stats for each collection in the db."
+    },
+    {
+      "name": "getFreeMonitoringStatus",
+      "description": "Calls the getFreeMonitoringStatus command"
+    },
+    {
+      "name": "disableFreeMonitoring",
+      "description": "returns the db disableFreeMonitoring. uses the setFreeMonitoring command"
+    },
+    {
+      "name": "enableFreeMonitoring",
+      "description": "returns the db enableFreeMonitoring. uses the setFreeMonitoring command"
+    },
+    {
+      "name": "getProfilingStatus",
+      "description": "returns the db getProfilingStatus. uses the profile command"
+    },
+    {
+      "name": "setProfilingLevel",
+      "description": "returns the db setProfilingLevel. uses the profile command"
+    },
+    {
+      "name": "setLogLevel",
+      "description": "returns the db setLogLevel. uses the setParameter command"
+    },
+    {
+      "name": "getLogComponents",
+      "description": "returns the db getLogComponents. uses the getParameter command"
+    },
+    {
+      "name": "cloneDatabase",
+      "description": "deprecated, non-functional"
+    },
+    {
+      "name": "cloneCollection",
+      "description": "deprecated, non-functional"
+    },
+    {
+      "name": "copyDatabase",
+      "description": "deprecated, non-functional"
+    },
+    {
+      "name": "commandHelp",
+      "description": "returns the db commandHelp. uses the passed in command with help: true"
+    },
+    {
+      "name": "listCommands",
+      "description": "Calls the listCommands command"
+    },
+    {
+      "name": "getLastErrorObj",
+      "description": "Calls the getLastError command"
+    },
+    {
+      "name": "getLastError",
+      "description": "Calls the getLastError command"
+    },
+    {
+      "name": "printShardingStatus",
+      "description": "Calls sh.status(verbose)"
+    },
+    {
+      "name": "printSecondaryReplicationInfo",
+      "description": "Prints secondary replicaset information"
+    },
+    {
+      "name": "getReplicationInfo",
+      "description": "Returns replication information"
+    },
+    {
+      "name": "printReplicationInfo",
+      "description": "Formats sh.getReplicationInfo"
+    },
+    {
+      "name": "printSlaveReplicationInfo",
+      "description": "DEPRECATED. Use db.printSecondaryReplicationInfo"
+    },
+    {
+      "name": "setSecondaryOk",
+      "description": "This method is deprecated. Use db.getMongo().setReadPref() instead"
+    },
+    {
+      "name": "watch",
+      "description": "Opens a change stream cursor on the database"
+    },
+    {
+      "name": "sql",
+      "description": "(Experimental) Runs a SQL query against Atlas Data Lake. Note: this is an experimental feature that may be subject to change in future releases."
+    }
+  ]
+}
