@@ -1,0 +1,39 @@
+
+//insert one
+db.employee.insert(
+{
+   " name" : "riyad",
+   " id" : 123,
+    "class": 12,
+    "city": "Dhaka",
+   " salary ": 12345
+}
+)
+
+//insert many
+db.getCollection("employee").insertMany(
+[
+ {
+    name: 'Riyad',
+    id: 123,
+    class: 12,
+    city: 'Dhaka',
+    salary: 12345
+  },
+  {
+    name: 'Alice',
+    id: 124,
+    class: 10,
+    city: 'New York',
+    salary: 15000
+  }
+];
+)
+
+//find
+db.employee.find({}).count('total')// count total number of data
+
+//aggregate
+db.employee.aggregate([
+    
+])
